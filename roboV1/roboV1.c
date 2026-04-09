@@ -101,7 +101,7 @@ int main(void) {
         uint32_t distancia = MedirDistancia();
 
         contador_telemetria++;
-        if(contador_telemetria >= 20) { 
+        if(contador_telemetria >= 15) { 
             char texto_distancia[40] = "Distancia: ";
             char num_str[15];
             NumeroATexto(distancia, num_str); 
@@ -137,7 +137,7 @@ int main(void) {
                 indice = 0;
                 if(strcmp(buffer, "buzzer") == 0) {
                     GPIOPinWrite(GPIO_PORTQ_BASE, 0x01, 0x01);
-                    SysCtlDelay((reloj / 3) * 2);
+                    SysCtlDelay((reloj / 3) * 4);
                     GPIOPinWrite(GPIO_PORTQ_BASE, 0x01, 0);
                 }
             } else {
